@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.a660252397.downpaymentsaver.FirstActivity">
+
+    <EditText
+        android:id="@+id/expenseEditTextView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/expenseLabelTextView"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/expenseLabelTextView"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/mainTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:text="@string/how_much_can_you_be_saving_per_month"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:id="@+id/incomeLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/monthly_income"
+        android:layout_below="@+id/mainTextView"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/expenseLabelTextView"
+        android:layout_width="wrap_content"
+        android:textSize="24sp"
+        android:layout_height="wrap_content"
+        android:text="@string/monthly_expenses"
+        android:layout_below="@+id/incomeLabelTextView"
+        android:layout_alignStart="@+id/incomeLabelTextView"
+        android:layout_marginTop="34dp" />
+
+    <TextView
+        android:id="@+id/savingsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expenseLabelTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="@string/_000_00"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/incomeEditTextView"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:layout_alignBaseline="@+id/incomeLabelTextView"
+        android:layout_alignBottom="@+id/incomeLabelTextView"
+        android:layout_toEndOf="@+id/expenseLabelTextView" />
+
+</RelativeLayout>

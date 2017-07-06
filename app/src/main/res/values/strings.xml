@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DownPaymentSaver</string>
+    <string name="monthly_income">Monthly Income:</string>
+    <string name="monthly_expenses">Monthly Expenses:</string>
+    <string name="how_much_can_you_be_saving_per_month">How much can you be saving per month?</string>
+    <string name="_000_00">$000.00</string>
+</resources>
