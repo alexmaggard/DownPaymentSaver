@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:textSize="40sp"
         android:textAlignment="center"
+        android:padding="5dp"
         android:text="@string/how_much_can_you_be_saving_per_month"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -67,5 +68,25 @@
         android:layout_alignBaseline="@+id/incomeLabelTextView"
         android:layout_alignBottom="@+id/incomeLabelTextView"
         android:layout_toEndOf="@+id/expenseLabelTextView" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:onClick="onClickNext"
+        android:text="@string/next"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/savingsLabelTextView" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/incomeLabelTextView"
+        android:layout_alignTop="@+id/nextButton"
+        android:layout_marginEnd="39dp"
+        android:onClick="onClickClear"
+        android:text="@string/clear" />
 
 </RelativeLayout>

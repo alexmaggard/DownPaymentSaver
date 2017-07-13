@@ -1,8 +1,10 @@
 package com.example.a660252397.downpaymentsaver;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,9 +20,9 @@ public class FirstActivity extends AppCompatActivity implements OnEditorActionLi
     private TextView savingsLabelTextView;
 
     //set instance variables
-    private float expense;
-    private float income;
-    private float savings;
+    public float expense;
+    public float income;
+    public float savings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,35 @@ public class FirstActivity extends AppCompatActivity implements OnEditorActionLi
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         savingsLabelTextView.setText(currency.format(savings));
 
-
-        //billAmount = Float.parseFloat(billAmountString);
     }
+
+    /**************************************************
+           onclick method to move to the second page
+     ****************************************************/
+
+    public void onClickNext(View view) {
+        //save information and pass to the next page when the next button is clicked
+        final TextView savingsLabelTextView = (TextView) findViewById(R.id.savingsLabelTextView);
+        Intent i = new Intent (this, secondActivity.class);
+
+        String msg = savingsLabelTextView.getText().toString();
+        i.putExtra("msg",msg);
+
+        startActivity(i);
+    }
+
+    /**************************************************
+     onclick method to clear entered info
+     ****************************************************/
+
+    public void onClickClear(View view) {
+        expenseEditTextView.setText("");
+        incomeEditTextView.setText("");
+
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        savings = 0 ;
+        savingsLabelTextView.setText(currency.format(savings));
+    }
+
+
 }

@@ -4,4 +4,13 @@
     <string name="monthly_expenses">Monthly Expenses:</string>
     <string name="how_much_can_you_be_saving_per_month">How much can you be saving per month?</string>
     <string name="_000_00">$000.00</string>
+    <string name="next">NEXT</string>
+    <string name="clear">CLEAR</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="available_to_save">available to save</string>
+    <string name="full_cost_of_item">Full cost of item</string>
+    <string name="down_payment">Down Payment %</string>
+    <string name="interest_rate">Interest Rate %</string>
+    <string name="how_much_will_you_put_away_each_month">How much will you put away each month?</string>
+
 </resources>
