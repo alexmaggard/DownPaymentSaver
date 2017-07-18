@@ -11,7 +11,6 @@ import android.widget.TextView.OnEditorActionListener;
 
 import java.text.NumberFormat;
 
-
 public class secondActivity extends AppCompatActivity implements OnEditorActionListener {
 
     //set widget variables
@@ -52,7 +51,6 @@ public class secondActivity extends AppCompatActivity implements OnEditorActionL
         savingsEditTextView = (EditText) findViewById(R.id.savingsEditTextView);
         downPayPreviewTextView = (TextView) findViewById(R.id.downPayPreviewTextView);
 
-
         //set listeners
         itemValueEditTextView.setOnEditorActionListener(this);
         downPayPreviewTextView.setOnEditorActionListener(this);
@@ -63,33 +61,17 @@ public class secondActivity extends AppCompatActivity implements OnEditorActionL
     /**********************************************
         onclick methods for buttons
      **********************************************/
-    //move to final page
-    public void onClickNext(View view) {
-        //save information and pass to the next page when the next button is clicked
-        final TextView downPayPreviewTextView = (TextView) findViewById(R.id.downPayPreviewTextView);
-        Intent i = new Intent (this, thirdActivity.class);
-
-        String msg = downPayPreviewTextView.getText().toString();
-        i.putExtra("msg",msg);
-
-        startActivity(i);
-    }
     //clear submitted information
     public void onClickClear(View view) {
         itemValueEditTextView.setText("");
         downPayPerEditTextView.setText("");
         interestRateEditTextView.setText("");
         savingsEditTextView.setText("");
-        //TODO CHANGE SET TEXT ON DOWNPAYPREVIEW TO BE A NUMBER $0.00
         downPayPreviewTextView.setText("");
     }
     //return to page 1 of app
     public void onClickBack(View view) {
-        Intent i = new Intent (this, secondActivity.class);
-
-        String msg = savingsTextViewLabel.getText().toString();
-        i.putExtra("msg",msg);
-
+        Intent i = new Intent (this, FirstActivity.class);
         startActivity(i);
     }
     /**********************************************
@@ -114,10 +96,26 @@ public class secondActivity extends AppCompatActivity implements OnEditorActionL
         interest = Float.parseFloat(interestString);
         savings = Float.parseFloat(savingsString);
         //TODO:FINISH CALCULATE METHOD
+
         dpPreview = (item*interest*dpp);
 
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         downPayPreviewTextView.setText(currency.format(dpPreview));
+    }
 
+    //move to final page
+    public void onClickNext(View view) {
+        //save information and pass to the next page when the next button is clicked
+        final TextView downPayPreviewTextView = (TextView) findViewById(R.id.downPayPreviewTextView);
+        Intent i = new Intent (this, thirdActivity.class);
+
+        String msg = downPayPreviewTextView.getText().toString();
+        String msg1 = itemValueEditTextView.getText().toString();
+        String msg2 = downPayPerEditTextView.getText().toString();
+        i.putExtra("msg",msg);
+        i.putExtra("msg",msg1);
+        i.putExtra("msg",msg2);
+
+        startActivity(i);
     }
 }

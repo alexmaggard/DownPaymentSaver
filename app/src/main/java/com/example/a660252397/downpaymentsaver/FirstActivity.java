@@ -9,7 +9,6 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-
 import java.text.NumberFormat;
 
 public class FirstActivity extends AppCompatActivity implements OnEditorActionListener {
@@ -69,13 +68,10 @@ public class FirstActivity extends AppCompatActivity implements OnEditorActionLi
 
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         savingsLabelTextView.setText(currency.format(savings));
-
     }
-
     /**************************************************
            onclick method to move to the second page
      ****************************************************/
-
     public void onClickNext(View view) {
         //save information and pass to the next page when the next button is clicked
         final TextView savingsLabelTextView = (TextView) findViewById(R.id.savingsLabelTextView);
